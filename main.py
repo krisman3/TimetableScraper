@@ -18,7 +18,11 @@ if response:
     driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]').click()
     driver.implicitly_wait(5)
     results = driver.find_element(By.ID, "search-results")
-    print(results.text)
+    doc_cards = results.find_elements(By.CSS_SELECTOR, "article.search-result")
+
+    for card in doc_cards:
+        text_lines = card.text.splitlines()
+        print(text_lines)
 
 else:
     print("Website not reachable.")
