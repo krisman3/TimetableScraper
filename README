@@ -1,0 +1,3 @@
+My rough vision is that the script will have the ability to select website, name of the doctor,
+check current appointments and provide a file (not sure what the proper output should be...
+probably some kind of table) with the dates and times that are currently available. I think I want to automate superdoc.bg
