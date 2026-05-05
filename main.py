@@ -14,11 +14,11 @@ if response:
     specialty.select_by_visible_text("Гастроентеролог")
     town = Select(driver.find_element(By.ID,"location"))
     town.select_by_visible_text("София град")
-    doc_name = Select(driver.find_element(By.ID,"doc_name"))
-    doc_name.select_by_visible_text("Спасова")
-    driver.find_element(By.CLASS_NAME, "btn btn-primary btn-lg align-self-start").click()
+    driver.find_element(By.ID,"doc_name").send_keys("Спасова")
+    driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]').click()
     driver.implicitly_wait(5)
-    results = driver.find_elements(By.ID, "search-results-wrap")
+    results = driver.find_element(By.ID, "search-results")
+    print(results.text)
 
 else:
     print("Website not reachable.")
